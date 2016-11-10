@@ -30,6 +30,10 @@ export class AuthService {
 
   // create an isAuthenticated method
   // to check the user's token expiry
+  isAuthenticated(): boolean {
+    // Using tokenNotExpired from 'angular2-jwt'
+    return tokenNotExpired('token');
+  }
 
   getToken(): string {
     return localStorage.getItem('token');
