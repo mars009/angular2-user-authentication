@@ -14,20 +14,25 @@ export class AuthService {
   login(credentials): Observable<Response> {
     // return a POST request to /users/authenticate endpoint with
     // credentials passed in
+    return this.http.post(`${API_URL}/users/authenticate`, credentials);
   }
 
   signup(credentials): Observable<Response> {
     // return a POST request to the /users enedpoint with
     // the credentials passed in
+    return this.http.post(`${API_URL}/users`, credentials);
   }
 
   finishAuthentication(token): void {
     // save the returned token in local storage
     // and redirect the user to the home route
+    localStorage.setItem('token', token);
+    this.router.navigate(['home']);
   }
 
   logout(): void {
     // remove the token from local storage
+    localStorage.removeItem('token');
   }
 
 }

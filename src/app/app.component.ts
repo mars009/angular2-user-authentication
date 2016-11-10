@@ -8,5 +8,14 @@ import { AuthService } from './auth/auth.service';
 })
 export class AppComponent {
 
+  links = {
+    login: ['/login'],
+    logout: ['/logout']
+  };
+
   constructor(private auth: AuthService) {}
+
+  logout() {    
+    localStorage.removeItem('token');
+  }
 }

@@ -6,8 +6,14 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav pull-right">
-        <!-- create links for Log In and Log Out -->
-      </ul>      
+        <!-- create links for Log In and Log Out NOTE: You can use the login link in the logout link to save time-->
+        <li>
+          <a [routerLink]="links.login">Login</a>
+        </li>
+        <li>
+          <a [routerLink]="links.login" (click)="logout()">Logout</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
